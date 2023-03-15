@@ -101,7 +101,7 @@ namespace Serializable {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 450);
+            this.ClientSize = new System.Drawing.Size(566, 424);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.tBSurname);
