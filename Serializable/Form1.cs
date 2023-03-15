@@ -13,27 +13,27 @@ namespace Serializable {
         public Form1() {
             InitializeComponent();
         }
-
         private void btnAddEntry_Click(object sender, EventArgs e) {
             Person person = new Person(tBName.Text, tBSurname.Text, dateTimePicker1.Value);
             Entry entry = new Entry(person);
             ProgramData.Entries.Add(entry);
             PushListBox();
         }
-
         private void PushListBox() {
             listBox1.Items.Clear();
+
             foreach (Entry entry1 in ProgramData.Entries) {
                 listBox1.Items.Add($"{entry1.Person.Name} {entry1.Person.Surname} {entry1.Person.Birthday} \t {entry1.Actions[entry1.Actions.Count-1].DateAction}");
             }
+            if (Serializable.binWriteObjectToFile(ProgramData.Entries, "ProgramData.bin") == MethodResultStatus.Fault) {
+                MessageBox.Show("Файл не записался.");
+            }
 
         }
-
         private void tBName_Enter(object sender, EventArgs e) {
             tBName.Text = null;
             tBName.ForeColor = Color.Black;
         }
-
         private void tBSurname_Enter(object sender, EventArgs e) {
             tBSurname.Text = null;
             tBSurname.ForeColor = Color.Black;
