@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Serializable {
     [Serializable]
-    class Entries : List<Entry> {
+    class Entries : List<Entry>  {
+        
         public static DateTime DateLastAdd {
             get;
             private set;
